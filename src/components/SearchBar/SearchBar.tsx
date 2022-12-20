@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Input, Select, SubmitBtn, Wrapper } from "./styles/styles";
+import { Input, Select, SubmitBtn, Wrapper, Option } from "./styles/styles";
 
 export const SEARCH_PARAM = "term";
 export const WHERE_PARAM = "where";
@@ -10,7 +10,7 @@ export default function SearchBar() {
   const [searchParams] = useSearchParams();
   const [formValue, setFormValue] = useState({
     term: searchParams.get(SEARCH_PARAM) ?? "",
-    where: searchParams.get(WHERE_PARAM) ?? "",
+    where: searchParams.get(WHERE_PARAM) ?? "people",
   });
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
@@ -32,8 +32,8 @@ export default function SearchBar() {
         value={formValue.where}
         onChange={(e) => setFormValue({ ...formValue, where: e.target.value })}
       >
-        <option value="people">people</option>
-        <option value="planets">planets</option>
+        <Option value="people">people</Option>
+        <Option value="planets">planets</Option>
       </Select>
       <Input
         type="text"

@@ -37,6 +37,10 @@ export const Select = styled.select`
   cursor: pointer;
 `;
 
+export const Option = styled.option`
+  background-color: black;
+`;
+
 export const SubmitBtn = styled.button`
   background-color: transparent;
   color: white;

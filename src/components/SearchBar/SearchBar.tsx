@@ -15,11 +15,12 @@ export default function SearchBar() {
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    nav({
-      pathname: "/search",
-      search: `?${SEARCH_PARAM}=${formValue.term}&${WHERE_PARAM}=${formValue.where}`,
-    });
+    if (formValue.term) {
+      nav({
+        pathname: "/search",
+        search: `?${SEARCH_PARAM}=${formValue.term}&${WHERE_PARAM}=${formValue.where}`,
+      });
+    }
   };
 
   useEffect(() => {

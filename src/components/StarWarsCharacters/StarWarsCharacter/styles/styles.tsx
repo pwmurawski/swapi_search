@@ -20,7 +20,7 @@ export const Wrapper = styled(Link)`
 
   :hover {
     border: 1px solid gold;
-    transform: scale(1.2);
+    transform: scale(1.1);
     z-index: 1;
   }
 `;
